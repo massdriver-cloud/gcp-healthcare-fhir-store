@@ -3,7 +3,6 @@ name: gcp-healthcare-fhir-store
 version: 1.0.0
 description: Fast Healthcare Interoperability Resources (FHIR) is a healthcare data standard with an application programming interface (API) for representing and exchanging electronic health records (EHR).
 source_url: https://github.com/massdriver-cloud/gcp-healthcare-fhir-store
-type: application
 params:
   examples:
   - __name: DSTU2
