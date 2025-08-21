@@ -1,7 +1,6 @@
 resource "massdriver_artifact" "fhir_store" {
-  field                = "fhir_store"
-  provider_resource_id = google_healthcare_fhir_store.main.id
-  name                 = "GCP Healthcare FHIR Store ${var.md_metadata.name_prefix}"
+  field    = "fhir_store"
+  name     = "GCP Healthcare FHIR Store ${var.md_metadata.name_prefix}"
   artifact = jsonencode(
     {
       data = {
