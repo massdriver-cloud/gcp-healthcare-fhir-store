@@ -58,17 +58,17 @@ connections:
   - dataset
   properties:
     gcp_authentication:
-      "$ref": massdriver/gcp-service-account
+      "$ref": gcp-service-account
     dataset:
-      "$ref": massdriver/gcp-healthcare-dataset
+      "$ref": gcp-healthcare-dataset
     pubsub_topic:
-      "$ref": massdriver/gcp-pubsub-topic
+      "$ref": gcp-pubsub-topic
 artifacts:
   required:
   - fhir_store
   properties:
     fhir_store:
-      "$ref": massdriver/gcp-healthcare-fhir-store
+      "$ref": gcp-healthcare-fhir-store
 ui:
   ui:order:
   - fhir_version
