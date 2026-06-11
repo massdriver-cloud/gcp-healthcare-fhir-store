@@ -3,24 +3,22 @@ resource "massdriver_artifact" "fhir_store" {
   name     = "GCP Healthcare FHIR Store ${var.md_metadata.name_prefix}"
   artifact = jsonencode(
     {
-      data = {
-        infrastructure = {
-          grn = google_healthcare_fhir_store.main.id
-        }
-        security = {
-          iam = {
-            read = {
-              role      = "roles/healthcare.fhirResourceReader"
-              condition = "resource.name.endsWith(\"${var.md_metadata.name_prefix}\")"
-            }
-            read_write = {
-              role      = "roles/healthcare.fhirResourceEditor"
-              condition = "resource.name.endsWith(\"${var.md_metadata.name_prefix}\")"
-            }
-            admin = {
-              role      = "roles/healthcare.fhirStoreAdmin"
-              condition = "resource.name.endsWith(\"${var.md_metadata.name_prefix}\")"
-            }
+      infrastructure = {
+        grn = google_healthcare_fhir_store.main.id
+      }
+      security = {
+        iam = {
+          read = {
+            role      = "roles/healthcare.fhirResourceReader"
+            condition = "resource.name.endsWith(\"${var.md_metadata.name_prefix}\")"
+          }
+          read_write = {
+            role      = "roles/healthcare.fhirResourceEditor"
+            condition = "resource.name.endsWith(\"${var.md_metadata.name_prefix}\")"
+          }
+          admin = {
+            role      = "roles/healthcare.fhirStoreAdmin"
+            condition = "resource.name.endsWith(\"${var.md_metadata.name_prefix}\")"
           }
         }
       }
